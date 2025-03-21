@@ -1,17 +1,17 @@
 package jm.task.core.jdbc.util;
 
-import java.sql.DriverManager;
 import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class Util {
-    public static Connection getConnection() {
-        String url = "jdbc:mysql://localhost:3306/main";
-        String user = "root";
-        String password = "1234";
+    private static final String URL = "jdbc:mysql://localhost:3306/main";
+    private static final String USER = "root";
+    private static final String PASSWORD = "1234";
 
+    public static Connection getConnection() {
         try {
-            Connection connection = DriverManager.getConnection(url, user, password);
+            Connection connection = DriverManager.getConnection(URL, USER, PASSWORD);
             if (connection != null) {
                 System.out.println("Соединение с БД успешно установлено!");
             }
@@ -23,3 +23,4 @@ public class Util {
         return null;
     }
 }
+
